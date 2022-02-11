@@ -1,0 +1,140 @@
+.types{
+    display: flex;
+    margin-left: 64px;
+}    
+
+.grass{
+    background-color: #78C850;
+    text-align: center;
+    color: white;
+    padding: 8px;
+    width: 3rem;
+}
+
+.fire{
+    background-color: #F08030;
+    text-align: center;
+    color: white;
+    padding: 8px;
+    width: 3rem;
+}
+
+.water{
+    background-color: #6890F0;
+    text-align: center;
+    color: white;
+    padding: 8px;
+    width: 3rem;
+}
+
+.bug{
+    background-color: #A8B820;
+    text-align: center;
+    color: white;
+    padding: 8px;
+    width: 3rem;
+}
+
+.normal{
+    background-color: #A8A878;
+    text-align: center;
+    color: white;
+    padding: 8px;
+    width: 3rem;
+}
+
+.poison{
+    background-color: #A040A0;
+    text-align: center;
+    color: white;
+    padding: 8px;
+    width: 3rem;
+}
+
+.electric{
+    background-color: #F8D030;
+    text-align: center;
+    color: white;
+    padding: 8px;
+    width: 3rem;
+}
+
+.ground{
+    background-color: #E0C068;
+    text-align: center;
+    color: white;
+    padding: 8px;
+    width: 3rem;
+}
+
+.fairy{
+    background-color: #EE99AC;
+    text-align: center;
+    color: white;
+    padding: 8px;
+    width: 3rem;
+}
+
+.fighting{
+    background-color: #C03028;
+    text-align: center;
+    color: white;
+    padding: 8px;
+    width: 3rem;
+}
+
+.psychic{
+    background-color: #F85888;
+    text-align: center;
+    color: white;
+    padding: 8px;
+    width: 3rem;
+}
+
+.rock{
+    background-color: #B8A038;
+    text-align: center;
+    color: white;
+    padding: 8px;
+    width: 3rem;
+}
+
+.ice{
+    background-color: #98D8D8;
+    text-align: center;
+    color: white;
+    padding: 8px;
+    width: 3rem;
+}
+
+.dragon{
+    background-color: #7038F8;
+    text-align: center;
+    color: white;
+    padding: 8px;
+    width: 3rem;
+}
+
+.flying{
+    background-color: #A98FF3;
+    text-align: center;
+    color: white;
+    padding: 8px;
+    width: 3rem;
+}
+
+.steel{
+    background-color: #B7B7CE;
+    text-align: center;
+    color: white;
+    padding: 8px;
+    width: 3rem;
+}
+
+.ghost{
+    background-color: #705898;
+    text-align: center;
+    color: white;
+    padding: 8px;
+    width: 3rem;
+}
