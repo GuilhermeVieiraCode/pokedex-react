@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    background-color: #333;
+}
+
+.header-text{
+    text-align: center;
+    color: white;
+    padding: 8px
+}

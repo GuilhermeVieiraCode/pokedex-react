@@ -3,6 +3,7 @@
     flex-wrap: wrap;
     margin-bottom: 16px;
     column-gap: 8px;
+    padding: 8px;
 }
 
 .btn-grass{

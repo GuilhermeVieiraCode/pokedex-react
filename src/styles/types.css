@@ -1,6 +1,7 @@
 .types{
     display: flex;
     margin-left: 64px;
+    padding: 4px;
 }    
 
 .grass{

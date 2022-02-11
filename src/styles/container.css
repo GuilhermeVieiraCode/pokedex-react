@@ -17,10 +17,11 @@
 
 
 .card-title{
-    background: black;
+    background: #333;
     width: 100%;
     text-align: center;
-    color: white
+    color: white;
+    padding: 8px 0 8px 0;
 }
 
 @media(max-width: 500px){
