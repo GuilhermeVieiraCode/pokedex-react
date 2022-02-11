@@ -5,7 +5,7 @@ import '../styles/types.css'
 const Card = ({ data }) => {
     return(
         <div className='card'>
-            <img src={data.image} alt="pokemon"></img>
+            <img src={data.sprites.front_default} alt="pokemon"></img>
             <div className='types'>
                 {data.types.map((item,index) => {
                     return(

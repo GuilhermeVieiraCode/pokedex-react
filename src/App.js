@@ -8,25 +8,13 @@ function App() {
   const [pokemons, setPokemons] = useState([]);
 
   async function getPokemonData(urlPiece){
-    await api.get(`${urlPiece}`).then(response => {
-      response.data.results.forEach(element => {
-        api.get(element.url).then(response => {
-          let { data } = response;
-          let name = data.name;
-          let id = data.id;
-          let image = data.sprites.front_default;
-          let types = data.types;
-          let newContent = {
-            "id": id,
-            "name": name,
-            "image": image,
-            "types": types 
-          }
-          setPokemons(oldArray => [...oldArray, newContent])
-        })
-      });
-    })
-  }
+    const {data} = await api.get(`${urlPiece}`);
+    
+    const resp = await Promise.all(data.results.map(item => api.get(item.url)));
+
+    const respData = resp.map(item => item.data);
+    setPokemons(respData)
+    }
 
   useEffect(() => {
     getPokemonData('/pokemon?limit=151')
