@@ -10,6 +10,7 @@ import './styles/btn-container.css';
 
 function App() {
   const [pokemons, setPokemons] = useState([]);
+  const [pokemonsFixed, setPokemonsFixed] = useState([]);
   const [pokemonTypes, setPokemonTypes] = useState([]);
   const [isLoading, setLoading] = useState(true);
 
@@ -21,6 +22,7 @@ function App() {
     const respData = resp.map(item => item.data);
     
     setPokemons(respData);
+    setPokemonsFixed(respData);
   }
 
   async function getPokemonTypeData(){
@@ -37,21 +39,17 @@ function App() {
     setPokemonTypes(filterTypes);
   }
 
-  async function getPokemonByType(type){
-    const {data} = await api.get('/pokemon?limit=151');
-    
-    const resp = await Promise.all(data.results.map(item => api.get(item.url)));
-
-    const respData = resp.map(item => item.data);
+  function getPokemonByType(type){
 
     let aux = [];
-    respData.map(item => item.types
+    pokemonsFixed.map(item => item.types
       .forEach(element => {
       if(element.type.name === type) aux.push(item);
     })
     );
     
-    setPokemons(aux)
+    setPokemons(aux);
+    
   }
   
   useEffect(() => {
