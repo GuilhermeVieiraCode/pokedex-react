@@ -4,8 +4,10 @@ import ButtonContainer from './components/ButtonContainer';
 import Card from './components/Card';
 import Container from './components/Container';
 import Header from './components/Header';
+import Select from './components/Select';
 import api from './services/api';
-import './styles/container.css';
+import useWindowDimensions from './services/windowDimensions';
+import './styles/card-container.css';
 import './styles/btn-container.css';
 
 function App() {
@@ -13,6 +15,7 @@ function App() {
   const [pokemonsFixed, setPokemonsFixed] = useState([]);
   const [pokemonTypes, setPokemonTypes] = useState([]);
   const [isLoading, setLoading] = useState(true);
+  const { width } = useWindowDimensions();
 
   async function getPokemonData(urlPiece){
     const {data} = await api.get(`${urlPiece}`);
@@ -58,7 +61,7 @@ function App() {
   }, [])
 
   function fakeRequest() {
-    return new Promise(resolve => setTimeout(() => resolve(), 2500));
+    return new Promise(resolve => setTimeout(() => resolve(), 3000));
   }
 
   useEffect(() => {
@@ -75,17 +78,27 @@ function App() {
     return null;
   }
 
+  function renderFilter(width){
+    let filter;
+    if(width < 660){
+      filter = <Select types={pokemonTypes}/>
+    }else{
+      filter = <ButtonContainer>
+          {pokemonTypes.map(item => {
+            return(
+              <Button onClick={() => getPokemonByType(item)} key={item} className={`btn-${item}`} text={item}/>
+            )
+          })}
+          <Button onClick={() => setPokemons(pokemonsFixed)} className={"btn-all"} text={"All"}/>
+      </ButtonContainer>
+    }
+    return filter;
+  }
+
   return (
     <>
       <Header text={"Pokedex - Kanto Region"}></Header>
-      <ButtonContainer>
-        {pokemonTypes.map(item => {
-          return(
-            <Button onClick={() => getPokemonByType(item)} key={item} className={`btn-${item}`} text={item}/>
-          )
-        })}
-        <Button onClick={() => getPokemonData('/pokemon?limit=151')} className={"btn-all"} text={"All"}/>
-      </ButtonContainer>
+      {renderFilter(width)}
       <Container>
       {pokemons.map(item => {
         return(
