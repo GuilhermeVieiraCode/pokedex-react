@@ -2,8 +2,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-content: center;
     padding: 4%;
-    gap: 16px;
+    gap: 24px;
 }
 
 .card{
